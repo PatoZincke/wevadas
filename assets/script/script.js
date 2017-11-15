@@ -1,8 +1,10 @@
 (function(){
 
-	var loadingImg	=	$(".loading"),
-		header		=	$(".header");
+	var loadingImg	=		$(".loading"),
+			header			=		$(".header");
 
+
+	///////////// Cargar Source
 
 	function sourcesList(lista) {
 
@@ -11,25 +13,62 @@
 		var sourceTemplate 	= 	document.getElementById("source-template").innerHTML,
 			sourceCompiled	=	Handlebars.compile(sourceTemplate),
 			sourceRender	=	sourceCompiled(lista),
-			fuente	 		= 	document.getElementById("source-list");
+			fuente	 		= 	document.getElementById("general-wrapper");
 
 			fuente.innerHTML = sourceRender;
 	}
 
-	var apiUrl 		= 	"https://newsapi.org/v1/sources?language=en&",
-		key 		= 	"apiKey=2a3d0185f6844aec8deae27977faa16d",
-		url2		=	apiUrl + key,
-		url 		= 	"https://newsapi.org/v1/articles?source=mashable&apiKey=2a3d0185f6844aec8deae27977faa16d";
+	///////////// Ajax Source
 
+	var apiUrl 		= 	"https://newsapi.org/v1/sources?language=en",
+			key 			= 	"&apiKey=2a3d0185f6844aec8deae27977faa16d",
+			url 			=		apiUrl + key;
 
 	$.ajax({
 	  url: url,
 	  dataType: "json",
 	  success: function(data) {
-	    sourcesList({ lista: data.articles });
+	  	console.log(data);
+	    sourcesList({ lista: data.sources });
 	    loadingImg.fadeOut("fast");
 	  }
 	});
+
+	///////////// Cargar Noticias
+
+	function newsList(lista) {
+
+		console.log(lista);
+
+		var sourceTemplate 	= 	document.getElementById("news-template").innerHTML,
+			sourceCompiled	=	Handlebars.compile(sourceTemplate),
+			sourceRender	=	sourceCompiled(lista),
+			fuente	 		= 	document.getElementById("general-wrapper");
+
+			fuente.innerHTML = sourceRender;
+	}
+	
+
+	///////////// Ajax Noticias
+
+	function newsRequest(){
+
+		var apiUrl 		= 	"https://newsapi.org/v1/sources?language=en&",
+				key 			= 	"apiKey=2a3d0185f6844aec8deae27977faa16d",
+				url2			=		apiUrl + key,
+				url 			= 	"https://newsapi.org/v1/articles?source=mashable&apiKey=2a3d0185f6844aec8deae27977faa16d";
+
+		$.ajax({
+		  url: url,
+		  dataType: "json",
+		  success: function(data) {
+		    newsList({ lista: data.articles });
+		    loadingImg.fadeOut("fast");
+		  }
+		});
+	}
+
+	///////////// Sombra Menu on Scroll
 
 	$(window).on('scroll', function() {
 

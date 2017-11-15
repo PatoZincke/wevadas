@@ -22,14 +22,14 @@
 		</div>
 
 		<!-- Info Content -->
-		<div id="source-list">
+		<div id="general-wrapper">
 			
 		</div>
 
-		<!-- Source Template -->
-		<script type="text/x-handlebars-template" id="source-template">
+		<!-- News Template -->
+		<script type="text/x-handlebars-template" id="news-template">
 			{{#each lista}}
-				<div class="source-wrapper">
+				<div class="news-wrapper">
 					<div class="category">
 						<div class="outer">
 						    <div class="inner rotate">{{ author }}</div>
@@ -41,7 +41,26 @@
 						</a>
 						<img src="{{urlToImage}}">
 						<p>{{ description }}</p>
-						<a href="{{url}}" class="source-link"> Ver Noticia en Sitio Web </a>
+						<a href="{{url}}" class="news-link"> Ver Noticia en Sitio Web </a>
+					</div>
+				</div>
+			{{/each}}
+		</script>
+
+		<!-- Source Template -->
+		<script type="text/x-handlebars-template" id="source-template">
+			{{#each lista}}
+				<div class="source-wrapper">
+					<div class="source-card">
+						<img src="assets/images/logos/{{id}}.jpg">
+						<a href="{{url}}">
+							<h1>{{ name }}</h1>
+						</a>
+						<a href="{{id}}">
+							<div class="go">
+								<img src="assets/images/go.svg">
+							</div>
+						</a>
 					</div>
 				</div>
 			{{/each}}

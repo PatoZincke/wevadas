@@ -1,7 +1,10 @@
 @charset "UTF-8";
 /* CSS Document */
 
-/* ////////////////// Estilos Generales ////////////// */
+
+/* //////////////////////////////////////// */
+/* /////////// Estilos Generales ////////// */
+/* //////////////////////////////////////// */
 
 body{ 
 	font-family: 'Open Sans', sans-serif;
@@ -21,7 +24,16 @@ a{ text-decoration: none; }
 	margin: -64px 0 0 -64px; 
 }
 
-/* ////////////////// Header ////////////// */
+#general-wrapper{ 
+	display: block;
+	float: left;
+	margin-top: 50px;
+	margin-bottom: 30px; }
+
+
+/* //////////////////////////////////////// */
+/* /////////////// Header ///////////////// */
+/* //////////////////////////////////////// */
 
 .header{
 	width: 100%;
@@ -68,22 +80,70 @@ a{ text-decoration: none; }
 		height: 30px;
 	}
 
-
-
-/* ////////////////// Source List ////////////// */
-
-#source-list{ 
-	display: block;
-	float: left;
-	margin-top: 50px;
-	margin-bottom: 30px; }
-
-.source-list{
-	width: 100%;
-	height: auto;
-}
+/* //////////////////////////////////////// */
+/* ///////////// Source List ////////////// */
+/* //////////////////////////////////////// */
 
 .source-wrapper{
+	width: 100%;
+	height: auto;
+	float: left;
+	margin-top: 20px;
+}
+
+.source-card{
+	float: left;
+	width: 90%;
+	height: auto;
+	background-color: #fff;
+	margin-left: 5%;
+	border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow:    0px 0px 12px 0px rgba(0, 0, 0, 0.2);
+    box-shadow:         0px 0px 12px 0px rgba(0, 0, 0, 0.2);
+}
+
+	.source-card img{
+		display: block;
+		float: left;
+		width: 30px;
+		height: auto;
+		margin: 10px 0 0 10px;
+	}
+
+	.source-card a h1{
+		float: left;
+		width: 60%;
+		text-align: left;
+		font-weight: 700;
+		color: #44516c;
+		font-size: 15px;
+		margin: 15px 0;
+		padding-left: 20px;
+	}
+
+	.go{
+		float: right;
+		height: 100%;
+		width: 50px;
+		height: 50px;
+		border-radius: 0 5px 5px 0;
+		background-color: #fff;
+	}
+
+	.go img{
+		width: 20px;
+		height: 20px;
+		display: block;
+		margin: 15px;
+	}
+
+
+/* //////////////////////////////////////// */
+/* /////////////// News List ////////////// */
+/* //////////////////////////////////////// */
+
+.news-wrapper{
 	width: 100%;
 	height: auto;
 	float: left;
@@ -151,7 +211,7 @@ a{ text-decoration: none; }
 		text-align: center;
 		font-weight: 700;
 		color: #44516c;
-		font-size: 16px;
+		font-size: 15px;
 		margin: 20px 5%;
 	}
 
@@ -164,7 +224,7 @@ a{ text-decoration: none; }
 		margin: 10px 0 10px 5%;
 	}
 
-	.card a.source-link{
+	.card a.news-link{
 		font-size: 14px;
 		float: right;
 		background-color: #66c301;
@@ -183,7 +243,10 @@ a{ text-decoration: none; }
 		margin: 10px 5%;
 	}
 
-/* ////////////////// Mobile ////////////// */
+
+/* //////////////////////////////////////// */
+/* /////////////// Mobile ///////////////// */
+/* //////////////////////////////////////// */
 
 @media only screen and (max-width: 425px) {
     .loading{
