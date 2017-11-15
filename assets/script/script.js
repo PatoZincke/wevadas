@@ -19,7 +19,7 @@
 	var apiUrl 		= 	"https://newsapi.org/v1/sources?language=en&",
 		key 		= 	"apiKey=2a3d0185f6844aec8deae27977faa16d",
 		url2		=	apiUrl + key,
-		url 		= 	"https://newsapi.org/v1/articles?source=engadget&apiKey=2a3d0185f6844aec8deae27977faa16d";
+		url 		= 	"https://newsapi.org/v1/articles?source=mashable&apiKey=2a3d0185f6844aec8deae27977faa16d";
 
 
 	$.ajax({
