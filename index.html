@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1"
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Nuevo Sitio Web</title>
+		<link rel="shortcut icon" href="favicon.png">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="assets/css/estilos.css">	
+	</head>
+	<body>
+
+		<!-- Loading -->
+		<img src="assets/images/loading.gif" class="loading">
+
+		<!-- Header -->
+		<div class="header">
+			<img src="assets/images/search-icon.png" class="search-icon">
+			<h1>Wevadas</h1>
+			<img src="assets/images/menu-icon.png" class="menu-icon">
+		</div>
+
+		<!-- Info Content -->
+		<div id="source-list">
+			
+		</div>
+
+		<!-- Source Template -->
+		<script type="text/x-handlebars-template" id="source-template">
+			{{#each lista}}
+				<div class="source-wrapper">
+					<div class="category">
+						<div class="outer">
+						    <div class="inner rotate">{{ author }}</div>
+						</div>
+					</div>
+					<div class="card">
+						<a href="#">
+							<h1>{{title}}</h1>
+						</a>
+						<img src="{{urlToImage}}">
+						<p>{{ description }}</p>
+						<a href="#" class="source-link"> Ver Noticias </a>
+					</div>
+				</div>
+			{{/each}}
+		</script>
+
+
+		<script type="text/javascript" src="assets/script/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="assets/script/handlebars-v4.0.11.js"></script>
+		<script type="text/javascript" src="assets/script/script.js"></script>
+	</body>
+</html>
